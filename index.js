@@ -5,7 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const cp = require('child_process');
 
-const version = '0.0.1';
+const version = require('./package').version;
 
 const deleteFolder = (filePath) => {
   if (fs.existsSync(filePath)) {
