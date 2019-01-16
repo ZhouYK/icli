@@ -23,9 +23,9 @@ const deleteFolder = (filePath) => {
   }
 };
 const scaffoldGitRepo = {
-  npm: 'git@github.com:ZhouYK/npm-scaffold.git',
-  'page-javascript': 'git@github.com:ZhouYK/javascript-web-framework.git',
-  'page-typescript': 'git@github.com:ZhouYK/typescript-web-framework.git',
+  npm: 'https://github.com/ZhouYK/npm-scaffold.git',
+  'page-javascript': 'https://github.com/ZhouYK/javascript-web-framework.git',
+  'page-typescript': 'https://github.com/ZhouYK/typescript-web-framework.git',
   node: ''
 }
 
