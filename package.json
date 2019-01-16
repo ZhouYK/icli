@@ -1,5 +1,5 @@
 {
-  "name": "@yk/icli",
+  "name": "@zhouyk/icli",
   "version": "0.0.1",
   "description": "tools for myself",
   "bin": {
