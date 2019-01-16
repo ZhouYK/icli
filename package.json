@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "tools for myself",
   "bin": {
-    "icli": "index.js"
+    "icli": "./index.js"
   },
   "dependencies": {
     "chalk": "~2.4.2",
