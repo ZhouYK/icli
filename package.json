@@ -13,5 +13,20 @@
   "files": [
     "index.js",
     "package.json"
-  ]
+  ],
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZhouYK/icli.git"
+  },
+  "author": "zhouyk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZhouYK/icli/issues"
+  },
+  "homepage": "https://github.com/ZhouYK/icli#readme"
 }
