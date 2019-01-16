@@ -1,6 +1,6 @@
 {
   "name": "@zhouyk/icli",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "tools for myself",
   "bin": {
     "icli": "./index.js"
