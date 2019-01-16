@@ -1,16 +1,17 @@
 {
-  "name": "@bk/icli",
+  "name": "@yk/icli",
   "version": "0.0.1",
+  "description": "tools for myself",
   "bin": {
-    "icli": "index.js",
-    "commander": "commander"
+    "icli": "index.js"
   },
   "dependencies": {
-    "shelljs": "^0.8.1"
+    "chalk": "~2.4.2",
+    "commander": "~2.19.0",
+    "inquirer": "~6.2.1"
   },
-  "devDependencies": {
-    "chalk": "^2.4.0",
-    "commander": "^2.15.1",
-    "inquirer": "^5.2.0"
-  }
+  "files": [
+    "index.js",
+    "package.json"
+  ]
 }
