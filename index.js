@@ -35,17 +35,7 @@ program
   .option('-s, --select-scaffold', 'show scaffold select list')
   .parse(process.argv);
 
-if (program.args.length === 0) {
-  console.log(`
-  Usage: index [options]
-
-Options:
-  -v, --version          output the version number
-  -l, --scaffold-list    show scaffold list
-  -s, --select-scaffold  show scaffold select list
-  -h, --help             output usage information
-  `)
-} else if (program.scaffoldList) {
+if (program.scaffoldList) {
   const text = `Scaffold：
   1, npm
   2, page(js)
@@ -96,4 +86,14 @@ Options:
       }
     })
   });
+} else {
+  console.log(`
+  Usage: index [options]
+
+Options:
+  -v, --version          output the version number
+  -l, --scaffold-list    show scaffold list
+  -s, --select-scaffold  show scaffold select list
+  -h, --help             output usage information
+  `)
 }
