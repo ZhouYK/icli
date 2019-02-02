@@ -4,9 +4,9 @@ const inquirer = require('inquirer');
 const path = require('path');
 const fs = require('fs');
 const cp = require('child_process');
+const chalk = require('chalk');
 
 const version = require('./package').version;
-
 const deleteFolder = (filePath) => {
   if (fs.existsSync(filePath)) {
     const files = fs.readdirSync(filePath);
@@ -31,6 +31,7 @@ const scaffoldGitRepo = {
 
 program
   .version(version, '-v, --version')
+  .usage('[options]')
   .option('-l, --scaffold-list', 'show scaffold list')
   .option('-s, --select-scaffold', 'show scaffold select list')
   .parse(process.argv);
@@ -76,24 +77,18 @@ if (program.scaffoldList) {
       const flag = fs.existsSync(p);
       if (!flag) {
         fs.mkdirSync(p);
-        console.log('Digging...');
-        cp.execSync(`git clone ${scaffoldGitRepo[choice.scaffold]} ${answer.folder}`);
+        console.log(chalk.green('Digging...'));
+        cp.execSync(`git clone ${scaffoldGitRepo[choice.scaffold]} ${answer.folder}`, {
+          stdio: 'inherit'
+        });
         const gitPath = path.resolve(p, './.git');
         deleteFolder(gitPath);
-        console.log('Done! Enjoy your work!');
+        console.log(chalk.green('Done! Enjoy your work!'));
       } else {
-        console.warn(`folder：${answer.folder} already exists`);
+        console.log(chalk.red(`folder：${answer.folder} already exists`));
       }
     })
   });
 } else {
-  console.log(`
-  Usage: index [options]
-
-Options:
-  -v, --version          output the version number
-  -l, --scaffold-list    show scaffold list
-  -s, --select-scaffold  show scaffold select list
-  -h, --help             output usage information
-  `)
+  program.outputHelp();
 }
