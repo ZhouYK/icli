@@ -23,10 +23,8 @@ const deleteFolder = (filePath) => {
   }
 };
 const scaffoldGitRepo = {
-  npm: 'https://github.com/ZhouYK/npm-scaffold.git',
   'page-javascript': 'https://github.com/ZhouYK/javascript-web-framework.git',
   'page-typescript': 'https://github.com/ZhouYK/typescript-web-framework.git',
-  node: ''
 }
 
 program
@@ -38,10 +36,8 @@ program
 
 if (program.scaffoldList) {
   const text = `Scaffold：
-  1, npm
-  2, page(js)
-  3, page(ts)
-  4, node(TODO)
+  1, page(js)
+  2, page(ts)
   `;
   console.log(text)
 } else if (program.selectScaffold) {
@@ -50,10 +46,6 @@ if (program.scaffoldList) {
     name: 'scaffold',
     message: 'scaffold list:',
     choices: [{
-      name: 'npm',
-      value: 'npm',
-      short: 'npm',
-    }, {
       name: 'page(js)',
       value: 'page-javascript',
       short: 'page-javascript',
@@ -61,10 +53,6 @@ if (program.scaffoldList) {
       name: 'page(ts)',
       value: 'page-typescript',
       short: 'page-javascript',
-    }, {
-      name: 'node',
-      value: 'node',
-      short: 'node',
     }]
   }]).then(choice => {
     // Use user feedback for... whatever!!
